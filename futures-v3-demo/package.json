@@ -1,0 +1,9 @@
+{
+  "name": "futures-v3-demo",
+  "version": "1.0.0",
+  "description": "Futures V3 API Demo with Web3 Signature / 期货V3 API示例（Web3签名）",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "ethers": "^6.9.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "futures-ws-demo",
+  "version": "1.0.0",
+  "description": "Futures WebSocket API Demo / 期货WebSocket API示例",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Run any example file with: node <filename>.js\""
+  },
+  "keywords": ["futures", "websocket", "api"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.14.0"
+  }
+}

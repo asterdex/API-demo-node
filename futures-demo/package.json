@@ -1,0 +1,21 @@
+{
+  "name": "futures-api-demo",
+  "version": "1.0.0",
+  "description": "Futures API Demo Examples / 期货API示例",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Run any example file with: node <filename>.js\" && echo \"使用以下命令运行任意示例文件：node <文件名>.js\""
+  },
+  "keywords": [
+    "futures",
+    "api",
+    "trading",
+    "cryptocurrency"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
+

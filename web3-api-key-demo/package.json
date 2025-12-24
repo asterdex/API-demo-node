@@ -1,0 +1,28 @@
+{
+  "name": "web3-api-key-demo",
+  "version": "1.0.0",
+  "description": "Web3 API Key Creation Demo / Web3 API密钥创建示例",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "get-nonce": "node 01_getNonce.js",
+    "sign": "node 02_signMessage.js",
+    "login": "node 03_login.js",
+    "create-api-key": "node 04_createApiKey.js",
+    "test-login": "node 05_testLogin.js"
+  },
+  "keywords": [
+    "web3",
+    "api-key",
+    "ethereum",
+    "wallet",
+    "signature"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "ethers": "^6.9.0"
+  }
+}
+
