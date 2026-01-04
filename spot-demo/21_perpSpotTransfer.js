@@ -17,11 +17,12 @@ const { signParams, buildQueryString } = require('./utils');
  * Parameters / 参数
  */
 const params = {
-    asset: 'USDT',              // Asset / 资产 (required / 必需)
-    amount: '100',              // Amount / 数量 (required / 必需)
-    type: 1,                    // Transfer type / 划转类型 (required / 必需)
-                                // 1: Spot -> Perpetual (现货 -> 永续)
-                                // 2: Perpetual -> Spot (永续 -> 现货)
+    asset: 'USDT',                              // Asset / 资产 (required / 必需)
+    amount: '100',                              // Amount / 数量 (required / 必需)
+    clientTranId: `transfer_${Date.now()}`,    // Transaction ID / 交易ID (required / 必需)
+    kindType: 'SPOT_FUTURE'                    // Transfer type / 划转类型 (required / 必需)
+                                                // SPOT_FUTURE: Spot -> Future (现货 -> 期货)
+                                                // FUTURE_SPOT: Future -> Spot (期货 -> 现货)
 };
 
 /**
@@ -33,11 +34,11 @@ async function perpSpotTransfer() {
         console.log('Parameters / 参数:', params);
         console.log('');
         
-        const typeMap = {
-            1: 'Spot -> Perpetual (现货 -> 永续)',
-            2: 'Perpetual -> Spot (永续 -> 现货)'
+        const kindTypeMap = {
+            'SPOT_FUTURE': 'Spot -> Future (现货 -> 期货)',
+            'FUTURE_SPOT': 'Future -> Spot (期货 -> 现货)'
         };
-        console.log(`Transfer Type / 划转类型: ${typeMap[params.type]}`);
+        console.log(`Transfer Type / 划转类型: ${kindTypeMap[params.kindType]}`);
         console.log('');
         
         // Sign the parameters / 签名参数

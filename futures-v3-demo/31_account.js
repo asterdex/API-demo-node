@@ -22,10 +22,16 @@ async function account() {
             config.RECV_WINDOW
         );
         const queryString = buildQueryString(signedParams);
-        const response = await axios.get(`${config.BASE_URL}/fapi/v3/account?${queryString}`);
+        const fullUrl = `${config.BASE_URL}/fapi/v3/account?${queryString}`;
+        const response = await axios.get(fullUrl);
         
         // Output raw response data / 输出原始响应数据
         console.log(JSON.stringify(response.data, null, 2));
+        
+        // Output request details / 输出请求详情
+        console.log('\n--- Request Details / 请求详情 ---');
+        console.log('Full URL / 完整URL:', fullUrl);
+        // console.log('Query String / 查询字符串:', queryString);
         return response.data;
     } catch (error) {
         console.error('Error / 错误:', error.response ? error.response.data : error.message);
