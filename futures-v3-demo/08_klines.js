@@ -7,7 +7,7 @@ const axios = require('axios');
 const config = require('./config');
 
 const params = {
-    "symbol": "BTCUSDT",
+    "symbol": "币安人生USDT",
     "interval": "1h",
     "limit": 10
 };

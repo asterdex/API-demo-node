@@ -29,6 +29,7 @@ Thumbs.db
 # Test files / 测试文件
 test-results/
 coverage/
+**/test_withdraw_signature.js
 
 # Build outputs / 构建输出
 dist/
@@ -48,8 +49,12 @@ temp/
 01-spot-api-en.md
 03-futures-api-en.md
 05-futures-v3-api-en.md
+07-testnet.md
 11-deposit-withdrawal-en.md
 12-api-key-registration-en.md
 
 # Summary Documents / 摘要文档
 **/AUTO_SIGNATURE_SUMMARY.md
+GETNONCE_API_FIX.md
+GETNONCE_QUERYSTRING_FIX.md
+NETWORK_ADDRESS_FORMAT.md

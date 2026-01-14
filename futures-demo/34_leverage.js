@@ -7,7 +7,7 @@ const axios = require('axios');
 const config = require('./config');
 
 const params = {
-    "symbol": "JELLYJELLYUSDT",
+    "symbol": "币安人生USDT",
     "leverage": "5"
 };
 

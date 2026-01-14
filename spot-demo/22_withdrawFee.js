@@ -16,7 +16,8 @@ const config = require('./config');
  * Parameters / 参数
  */
 const params = {
-    coin: 'USDT',               // Coin / 币种 (required / 必需)
+    chainId: '56',
+    asset: 'USDT',               // asset / 币种 (required / 必需)
 };
 
 /**

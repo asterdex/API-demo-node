@@ -10,6 +10,8 @@
  */
 
 const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
 const config = require('./config');
 
 /**
@@ -23,6 +25,11 @@ async function getExchangeInfo() {
         
         // Output raw response data / 输出原始响应数据
         console.log(JSON.stringify(response.data, null, 2));
+        
+        // Save response to JSON file / 保存响应到JSON文件
+        const outputFile = path.join(__dirname, 'exchangeInfo-response.json');
+        fs.writeFileSync(outputFile, JSON.stringify(response.data, null, 2), 'utf8');
+        console.log(`\n✓ Response saved to / 响应已保存到: ${outputFile}`);
         
         return response.data;
     } catch (error) {

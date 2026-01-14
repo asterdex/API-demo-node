@@ -44,18 +44,17 @@ Edit `config.js` and fill in your API credentials.
 
 ### Wallet Endpoints / 钱包接口
 - `21_perpSpotTransfer.js` - Perpetual-Spot transfer / 永续-现货划转
-- `22_sendToAddress.js` - Send to address / 发送到地址
-- `23_withdrawFee.js` - Withdraw fee / 提现手续费
-- `24_withdraw.js` - Withdraw / 提现
+- `22_withdrawFee.js` - Withdraw fee / 提现手续费
+- `23_withdraw.js` - **Withdraw / 提现** ⚠️ (requires EIP-712 wallet signature / 需要EIP-712钱包签名)
 
 ### API Key Management / API密钥管理
-- `25_getNonce.js` - Get nonce / 获取Nonce
-- `26_createApiKey.js` - Create API key / 创建API密钥
+- `24_getNonce.js` - Get nonce / 获取Nonce
+- `25_createApiKey.js` - Create API key / 创建API密钥
 
 ### User Data Stream / 用户数据流
-- `27_createListenKey.js` - Create listen key / 创建Listen Key
-- `28_keepaliveListenKey.js` - Keepalive listen key / 保持Listen Key活跃
-- `29_closeListenKey.js` - Close listen key / 关闭Listen Key
+- `26_createListenKey.js` - Create listen key / 创建Listen Key
+- `27_keepaliveListenKey.js` - Keepalive listen key / 保持Listen Key活跃
+- `28_closeListenKey.js` - Close listen key / 关闭Listen Key
 
 ## Usage / 使用方法
 
@@ -66,6 +65,47 @@ Run any example file:
 node 01_ping.js
 ```
 
+## Special Features / 特殊功能
+
+### Withdraw with Auto-Generated EIP-712 Signature / 自动生成EIP-712签名的提现
+
+提现接口 (`23_withdraw.js`) 需要**两个签名**：
+
+1. **User Signature (EIP-712)** - 钱包签名，用于验证提现请求的真实性
+2. **API Signature (HMAC SHA256)** - API签名，用于验证API调用
+
+**新功能：自动生成 userSignature！**
+
+```javascript
+const { withdraw } = require('./23_withdraw');
+
+// Simply call withdraw() - userSignature is auto-generated
+// 只需调用 withdraw() - userSignature 会自动生成
+await withdraw();
+
+// Or with custom parameters / 或使用自定义参数
+await withdraw({
+    chainId: '56',      // 1(ETH), 56(BSC), 42161(Arbi)
+    asset: 'USDT',
+    receiver: '0x...',
+    amount: '10',
+    fee: '1.234567891'
+}, 'Mainnet');
+```
+
+**签名流程 / Signature Flow:**
+
+1. ✅ 自动根据提现参数生成 EIP-712 类型化数据签名
+2. ✅ 自动生成 nonce（微秒时间戳）
+3. ✅ 自动生成 API HMAC SHA256 签名
+4. ✅ 提交完整的提现请求
+
+**相关文件 / Related Files:**
+- `walletSignature.js` - 包含 `generateWithdrawSignature()` 函数
+- `WALLET_SIGNATURE_GUIDE.md` - 钱包签名详细指南
+
+---
+
 ## Security / 安全性
 
 ⚠️ Never commit your API credentials to version control!  
@@ -74,4 +114,5 @@ node 01_ping.js
 - Keep your `config.js` file private / 保持`config.js`文件私密
 - Add `config.js` to `.gitignore` / 将`config.js`添加到`.gitignore`
 - Use environment variables in production / 在生产环境中使用环境变量
+- **Protect your wallet private key** / **保护好您的钱包私钥**
 

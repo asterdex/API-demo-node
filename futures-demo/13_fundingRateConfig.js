@@ -15,7 +15,7 @@ async function fundingRateConfig() {
         console.log('Parameters / 参数:', params);
         
         
-        const response = await axios.get(`${config.BASE_URL}/fapi/v1/fundingRateConfig`, { params });
+        const response = await axios.get(`${config.BASE_URL}/fapi/v1/fundingInfo`, { params });
         
         // Output raw response data / 输出原始响应数据
         console.log(JSON.stringify(response.data, null, 2));

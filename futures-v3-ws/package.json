@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Futures V3 WebSocket Demo / 期货V3 WebSocket示例",
   "dependencies": {
-    "ws": "^8.14.0"
+    "ws": "^8.14.0",
+    "axios": "^1.6.0"
   }
 }

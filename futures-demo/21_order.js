@@ -9,9 +9,10 @@ const config = require('./config');
 const params = {
     "symbol": "BTCUSDT",
     "side": "BUY",
+    "positionSide": "LONG",
     "type": "LIMIT",
     "quantity": "0.001",
-    "price": "20000",
+    "price": "90000",
     "timeInForce": "GTC"
 };
 
