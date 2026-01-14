@@ -255,17 +255,4 @@ The code already handles this correctly. If you still see this error, run:
 npm run test-login  # Test different login methods
 ```
 
-## Support / 支持
-
-For more information, please refer to:
-
-更多信息，请参考：
-- **⭐ Solution:** [SOLUTION.md](./SOLUTION.md) - How the problem was solved / 问题如何解决
-- **Success Notes:** [SUCCESS_NOTES.md](./SUCCESS_NOTES.md) - Login solution / 登录解决方案
-- **Workflow Guide:** [WORKFLOW_GUIDE.md](./WORKFLOW_GUIDE.md) - Detailed workflows / 详细工作流程
-- **API Documentation:** [api-key-registration-en.md](https://github.com/asterdex/api-docs/blob/master/aster-api-key-registration.md)
-
-## License / 许可证
-
-MIT
 

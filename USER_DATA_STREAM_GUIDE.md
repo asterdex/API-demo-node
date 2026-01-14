@@ -246,5 +246,5 @@ Error creating listenKey / 创建listenKey错误: Invalid API-key
 
 - [AsterDEX 官网](https://www.asterdex.com)
 - [API 管理](https://www.asterdex.com/en/api-management)
-- [技术支持](https://www.asterdex.com/support)
+
 
