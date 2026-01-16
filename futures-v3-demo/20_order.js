@@ -11,8 +11,8 @@ const params = {
     "side": "BUY",
     "type": "LIMIT",
     "quantity": "0.001",
-    "price": "20000",
-    "timeInForce": "GTC"
+    "price": "90000",
+    "timeInForce": "HIDDEN"
 };
 
 async function order() {

@@ -84,7 +84,7 @@ module.exports = {
     EIP712_DOMAIN: {
         name: 'AsterSignTransaction',
         version: '1',
-        chainId: 56,  // BSC Chain ID
+        chainId: 1666,  // Aster Chain ID
         verifyingContract: '0x0000000000000000000000000000000000000000'
     },
     
@@ -100,7 +100,7 @@ module.exports = {
 **EIP-712 域说明 / EIP-712 Domain Explanation**:
 - `name`: 签名应用名称（固定为 'AsterSignTransaction'） / Signature app name (fixed as 'AsterSignTransaction')
 - `version`: 版本号（当前为 '1'） / Version number (currently '1')
-- `chainId`: 链ID（56 = BSC，714 = testnet） / Chain ID (56 = BSC, 714 = testnet)
+- `chainId`: 链ID（1666 = mainnet，714 = testnet） / Chain ID (1666 = mainnet, 714 = testnet)
 - `verifyingContract`: 验证合约地址（使用零地址） / Verifying contract address (use zero address)
 
 ⚠️ **安全提示 / Security Notice**:
@@ -122,7 +122,7 @@ EIP-712 Domain defines the context for signatures and contains 4 key fields:
 EIP712_DOMAIN: {
     name: 'AsterSignTransaction',     // 应用名称（固定） / App name (fixed)
     version: '1',                      // 版本（固定） / Version (fixed)
-    chainId: 56,                       // 链ID（重要！） / Chain ID (important!)
+    chainId: 1666,                       // 链ID（重要！） / Chain ID (important!)
     verifyingContract: '0x0000...'    // 验证合约（固定为零地址） / Verifying contract (zero address)
 }
 ```
@@ -131,7 +131,7 @@ EIP712_DOMAIN: {
 
 | 环境 / Environment | chainId | 说明 / Description |
 |------|---------|------|
-| 生产环境 / Production | `56` | BSC (Binance Smart Chain) 主网 / Mainnet |
+| 生产环境 / Production | `1666` | 主网 / Mainnet |
 | 测试网 / Testnet | `714` | AsterDEX 测试网络 / Test Network |
 
 ⚠️ **重要 / Important**: chainId 必须与服务器端配置一致，否则签名验证会失败！
@@ -147,7 +147,7 @@ module.exports = {
     EIP712_DOMAIN: {
         name: 'AsterSignTransaction',
         version: '1',
-        chainId: 56,  // 生产环境使用 56 / Use 56 for production
+        chainId: 1666,  // 生产环境使用 1666 / Use 1666 for production
         verifyingContract: '0x0000000000000000000000000000000000000000'
     }
 };
@@ -332,7 +332,7 @@ const queryString = buildQueryString(signedParams);
 
 ### Q4: chainId 应该设置为多少？ / What should chainId be set to?
 **A:** 
-- **生产环境 / Production**: `56` (BSC Chain ID)
+- **生产环境 / Production**: `1666` (Aster Chain ID)
 - **测试网 / Testnet**: `714` (AsterDEX Testnet)
 - 具体值请参考最新文档或咨询技术支持 / Refer to latest documentation or contact technical support for specific values
 

@@ -8,7 +8,7 @@ const config = require('./config');
 
 const params = {
     "symbol": "BTCUSDT",
-    "orderId": "123456"
+    "orderId": "23506813100"
 };
 
 async function cancelOrder() {
