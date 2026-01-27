@@ -6,7 +6,7 @@ from eth_account.messages import  encode_structured_data
 from copy import deepcopy
 import json
 
-host = 'http://10.100.7.198:9081'
+host = 'https://fapi.asterdex.com'
 # host = 'http://127.0.0.1:9211'
 
 user = '0x9FdC25AE9dE3791ECb122959ff196d600d5aDDA4'
@@ -137,7 +137,7 @@ def sign_v3(private_key, message) -> str:
       "domain": {
           "name": "AsterSignTransaction",
           "version": "1",
-          "chainId": 714,
+          "chainId": 1666,
           "verifyingContract": "0x0000000000000000000000000000000000000000"
       },
       "message": {
@@ -174,7 +174,7 @@ def send_by_url(method_config):
     sign_private_key = main_private_key
     main = method_config.get('main') is not None
 
-    param['asterChain'] = 'Testnet'
+    param['asterChain'] = 'Mainnet'
     param['user'] = user
     if not main:
         sign_private_key = priKey

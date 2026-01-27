@@ -41,7 +41,7 @@ This project demonstrates how to integrate with **Aster Builder Code Mode** Pro-
 **签名方式 / Signature Method**:
 - 先构建完整的 **querystring**（包含所有参数，但不含 signature）
 - 对 querystring 进行 **Message.msg** EIP-712 签名
-- EIP-712 Domain: `chainId: 714` (测试网) / Testnet
+- EIP-712 Domain: `chainId: 1666` (主网) / Mainnet
 - 最终 URL = `path?querystring&signature=xxx`
 
 **示例接口 / Example APIs**:
@@ -183,7 +183,7 @@ const queryString = buildQueryString(params);
 const typedData = {
     types: { Message: [{ name: 'msg', type: 'string' }] },
     primaryType: 'Message',
-    domain: { name, version, chainId: 714, ... },
+    domain: { name, version, chainId: 1666, ... },
     message: { msg: queryString }
 };
 const signature = await wallet.signTypedData(domain, types, message);

@@ -39,7 +39,7 @@ const config = {
     EIP712_DOMAIN_MESSAGE: {
         name: 'AsterSignTransaction',
         version: '1',
-        chainId: 714,
+        chainId: 1666,
         verifyingContract: '0x0000000000000000000000000000000000000000'
     }
 };

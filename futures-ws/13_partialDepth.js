@@ -9,7 +9,7 @@ const WebSocket = require('ws');
 
 const config = {
     baseUrl: 'wss://fstream.asterdex.com/ws',
-    symbol: 'btcusdt',
+    symbol: 'asterusdt',
     
     levels: 5,
     
